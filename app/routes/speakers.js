@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-app.get('/speakers', function(req, res) {
+
+router.get('/speakers', function(req, res) {
 	var info = '';
+	//Grab information made available in app.js
+	var dataFile = req.app.get('appData');
 	dataFile.speakers.forEach(function(item){
 		info += `
 		<li>
@@ -19,7 +22,9 @@ app.get('/speakers', function(req, res) {
 		`);
 });
 
-app.get('/speakers/:speakerid', function(req, res) {
+router.get('/speakers/:speakerid', function(req, res) {
+	//Grab information made available in app.js
+	var dataFile = req.app.get('appData');
 	var speaker = dataFile.speakers[req.params.speakerid];
 	res.send(`
 
