@@ -24,6 +24,8 @@ router.get('/speakers', function(req, res) {
 		<h1>Business Meetings</h1>
 		${info}
 
+		<script src="/reload/reload.js"></script>
+
 		`);
 });
 
@@ -37,6 +39,8 @@ router.get('/speakers/:speakerid', function(req, res) {
 		<h1>${speaker.title}</h1>
 		<h3>with ${speaker.name}</h3>
 		<p>${speaker.summary}</p>
+
+		<script src="/reload/reload.js"></script>
 
 		`);
 });
